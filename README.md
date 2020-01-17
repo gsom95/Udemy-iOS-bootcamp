@@ -3,3 +3,4 @@ Projects developed during Udemy course ["The Complete iOS App Development Bootca
 
 ## List of projects
 1. [I am Rich](/I-am-Rich) Just an app with image and label. Basically a Helloworld.
+2. [Dicee](/Dicee) Roll the dice by pressing a button or by shaking a phone.
