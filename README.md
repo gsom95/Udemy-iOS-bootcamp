@@ -7,3 +7,4 @@ Projects developed during Udemy course ["The Complete iOS App Development Bootca
 3. [Magic 8 Ball](/Magic-8-Ball) When in doubt, ask the ball.
 4. [AutoLayout](/AutoLayout) Practice setting autolayout constraints.
 5. [Calculator-Layout](/Calculator-Layout) AutoLayout challenge.
+6. [Xylophone](/Xylophone) It's just like real Xylophone! Playing sound and showing cool animation (changing button alpha for short period of time).  
