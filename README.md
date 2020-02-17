@@ -8,3 +8,4 @@ Projects developed during Udemy course ["The Complete iOS App Development Bootca
 4. [AutoLayout](/AutoLayout) Practice setting autolayout constraints.
 5. [Calculator-Layout](/Calculator-Layout) AutoLayout challenge.
 6. [Xylophone](/Xylophone) It's just like real Xylophone! Playing sound and showing cool animation (changing button alpha for short period of time).  
+7. [Egg Timer](/EggTimer) App with timer (3 different options) and alarm sound!
