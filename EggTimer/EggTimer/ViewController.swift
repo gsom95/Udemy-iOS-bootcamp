@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
@@ -15,6 +16,7 @@ class ViewController: UIViewController {
     let secondsInMinute = 1
     var totalTime = 0
     var secondsPassed = 0
+    var player: AVAudioPlayer!
     
     var timer: Timer? = nil
     @IBAction func hardnessSelected(_ sender: UIButton) {
@@ -53,6 +55,10 @@ class ViewController: UIViewController {
             timer!.invalidate()
             timer = nil
             titleLabel.text = "Done!\n" + "Do you want to cook more eggs?"
+            
+            let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+            player = try! AVAudioPlayer(contentsOf: url!)
+            player.play()
         }
     }
 }
