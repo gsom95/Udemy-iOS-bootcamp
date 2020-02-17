@@ -45,14 +45,14 @@ class ViewController: UIViewController {
     }
     
     @objc func updateCounter() {
-        progressView.progress = Float(secondsPassed) / Float(totalTime)
         if secondsPassed < totalTime {
+            secondsPassed += 1
+            progressView.progress = Float(secondsPassed) / Float(totalTime)
             print("\(secondsPassed) has passed")
         } else {
             timer!.invalidate()
             timer = nil
-            titleLabel.text = "Done!"
+            titleLabel.text = "Done!\n" + "Do you want to cook more eggs?"
         }
-        secondsPassed += 1
     }
 }
