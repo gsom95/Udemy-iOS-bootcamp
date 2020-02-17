@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var progressView: UIProgressView!
     
-    let secondsInMinute = 1
+    let secondsInMinute = 60
     var totalTime = 0
     var secondsPassed = 0
     var player: AVAudioPlayer!
