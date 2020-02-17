@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     }
     
     @objc func updateCounter() {
+        progressView.progress = Float(secondsPassed) / Float(totalTime)
         if secondsPassed < totalTime {
             print("\(secondsPassed) has passed")
         } else {
@@ -52,7 +53,6 @@ class ViewController: UIViewController {
             timer = nil
             titleLabel.text = "Done!"
         }
-        progressView.progress = Float(secondsPassed) / Float(totalTime)
         secondsPassed += 1
     }
 }
