@@ -31,7 +31,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-Hl-IRe">
-                                        <rect key="frame" x="0.0" y="602" width="374.00000000000006" height="80"/>
+                                        <rect key="frame" x="0.0" y="602" width="374" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="sIe-pp-yJu"/>
                                         </constraints>
@@ -45,7 +45,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-vQ-GyC">
-                                        <rect key="frame" x="0.0" y="705" width="374.00000000000006" height="80"/>
+                                        <rect key="frame" x="0.0" y="705" width="374" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="kNg-au-Iqf"/>
                                         </constraints>
