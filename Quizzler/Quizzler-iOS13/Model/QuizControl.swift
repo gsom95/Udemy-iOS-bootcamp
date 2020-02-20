@@ -25,6 +25,8 @@ struct QuizControl {
 
     ]
 
+    var score = 0
+
     var currentQuestionIndex = 0
 
     var progress: Float {
@@ -35,8 +37,9 @@ struct QuizControl {
         return questions[currentQuestionIndex]
     }
 
-    func isCorrectAnswer(_ givenAnswer: Bool) -> Bool {
+    mutating func isCorrectAnswer(_ givenAnswer: Bool) -> Bool {
         if givenAnswer == currentQuestion.answer {
+            score += 1
             return true
         }
 
@@ -48,6 +51,7 @@ struct QuizControl {
             currentQuestionIndex += 1
         } else {
             currentQuestionIndex = 0
+            score = 0
         }
     }
 }
