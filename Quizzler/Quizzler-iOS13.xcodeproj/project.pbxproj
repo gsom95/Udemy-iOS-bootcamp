@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78A159C223FE8240007E6FAC /* QuizControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A159C123FE8240007E6FAC /* QuizControl.swift */; };
 		78DDF3F323FC50BC00C4ACC4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDF3F223FC50BC00C4ACC4 /* Question.swift */; };
 		AD4BDE4A22D878BA005BA4CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4BDE4922D878BA005BA4CC /* AppDelegate.swift */; };
 		AD4BDE4C22D878BA005BA4CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4BDE4B22D878BA005BA4CC /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78A159C123FE8240007E6FAC /* QuizControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizControl.swift; sourceTree = "<group>"; };
 		78DDF3F223FC50BC00C4ACC4 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		AD4BDE4622D878BA005BA4CC /* Quizzler-iOS13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quizzler-iOS13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4BDE4922D878BA005BA4CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				78DDF3F223FC50BC00C4ACC4 /* Question.swift */,
+				78A159C123FE8240007E6FAC /* QuizControl.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78A159C223FE8240007E6FAC /* QuizControl.swift in Sources */,
 				AD4BDE4E22D878BA005BA4CC /* ViewController.swift in Sources */,
 				78DDF3F323FC50BC00C4ACC4 /* Question.swift in Sources */,
 				AD4BDE4A22D878BA005BA4CC /* AppDelegate.swift in Sources */,

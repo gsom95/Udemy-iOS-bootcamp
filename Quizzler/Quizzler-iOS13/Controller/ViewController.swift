@@ -9,14 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    let quiz = [
-        Question(text: "2 + 4 = 5", answer: false),
-        Question(text: "3 + 1 = 4", answer: true),
-    ]
-    
-    var currentQuestionNumber = 0
-    
+    var quiz = QuizControl()
+
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var progressBar: UIProgressView!
     @IBOutlet var trueButton: UIButton!
@@ -29,29 +23,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        let userAnswer = Bool(sender.currentTitle!.lowercased())
-        let rightAnswer = quiz[currentQuestionNumber].answer
+        let userAnswer = Bool(sender.currentTitle!.lowercased())!
 
-        if userAnswer == rightAnswer {
+        if quiz.isCorrectAnswer(userAnswer) {
             sender.backgroundColor = UIColor.green
         } else {
             sender.backgroundColor = UIColor.red
         }
-
-        if currentQuestionNumber + 1 < quiz.count {
-            currentQuestionNumber += 1
-        } else {
-            currentQuestionNumber = 0
-        }
+        quiz.nextQuestion()
 
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
     @objc func updateUI() {
-        questionLabel.text = quiz[currentQuestionNumber].text
+        questionLabel.text = quiz.currentQuestion.text
+        progressBar.progress = quiz.progress
+
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
-
-        progressBar.progress = Float(currentQuestionNumber + 1) / Float(quiz.count)
     }
 }
