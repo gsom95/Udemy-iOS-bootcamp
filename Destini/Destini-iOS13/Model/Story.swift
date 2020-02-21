@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+typealias StoryChoice = (text: String, nextStep: Int?)
+
+class Story {
+    let text: String
+
+    var choices: [StoryChoice]
+
+    init(text: String, choices: [StoryChoice] = []) {
+        self.text = text
+        self.choices = choices
+    }
+}
