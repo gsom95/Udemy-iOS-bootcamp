@@ -13,10 +13,15 @@ class ResultViewController: UIViewController {
     @IBOutlet var bmiLabel: UILabel!
     @IBOutlet var adviceLabel: UILabel!
 
+    var bmi: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        bmiLabel.text = bmi
     }
-    
+
     @IBAction func recalculatePressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
