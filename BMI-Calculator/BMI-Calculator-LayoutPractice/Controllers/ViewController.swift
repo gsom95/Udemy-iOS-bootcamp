@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func weightSliderChanged(_ sender: UISlider) {
-        weightLabel.text = "\(Int(sender.value))Kg"
+        weightLabel.text = String(format: "%.0fKg", sender.value)
     }
 }
 
