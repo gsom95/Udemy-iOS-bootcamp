@@ -11,3 +11,4 @@ Projects developed during Udemy course ["The Complete iOS App Development Bootca
 7. [Egg Timer](/EggTimer) App with timer (3 different options) and alarm sound!
 8. [Quizzler](/Quizzler) Simple quiz app with true-or-false type of questions.
 9. [Destini](/Destini) Story like game with two options to move around the story.
+10. [BMI Calculator](/BMI-Calculator) A BMI calculator with two (2 !!!!) views.
