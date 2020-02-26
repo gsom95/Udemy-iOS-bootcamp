@@ -28,6 +28,9 @@ class BMICalculator {
 
     var BMI: Float {
         let bmi = Float(weight) / (height * height)
+        if bmi == Float.infinity {
+            return 0.0
+        }
         return bmi.rounded(toPlaces: 1)
     }
     var BMIDescription: String {
