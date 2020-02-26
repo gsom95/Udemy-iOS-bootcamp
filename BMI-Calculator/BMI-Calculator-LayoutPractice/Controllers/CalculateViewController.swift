@@ -14,27 +14,26 @@ class CalculateViewController: UIViewController {
     @IBOutlet var heightSlider: UISlider!
     @IBOutlet var weightSlider: UISlider!
 
-    var bmiString: String?
+    var bmiCalc = BMICalculator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        bmiCalc.height = heightSlider.value
+        bmiCalc.weight = Int(weightSlider.value)
     }
 
     @IBAction func heightSliderChanged(_ sender: UISlider) {
-        heightLabel.text = String(format: "%.2fm", sender.value)
+        bmiCalc.height = sender.value
+        heightLabel.text = bmiCalc.heightDescription
     }
 
     @IBAction func weightSliderChanged(_ sender: UISlider) {
-        weightLabel.text = String(format: "%.0fKg", sender.value)
+        bmiCalc.weight = Int(sender.value)
+        weightLabel.text = bmiCalc.weightDescription
     }
 
     @IBAction func calculatePressed(_ sender: UIButton) {
-        let height = heightSlider.value
-        let weight = weightSlider.value
-
-        bmiString = String(format: "%.1f", weight / (height * height)) 
-
         performSegue(withIdentifier: "goToResult", sender: self)
     }
 
@@ -42,8 +41,7 @@ class CalculateViewController: UIViewController {
         if segue.identifier == "goToResult" {
             let destination = segue.destination as! ResultViewController
 
-
-            destination.bmi = bmiString ?? "0.0"
+            destination.bmi = bmiCalc.BMIDescription
         }
     }
 }
