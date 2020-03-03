@@ -12,11 +12,17 @@ class ResultViewController: UIViewController {
     @IBOutlet var totalLabel: UILabel!
     @IBOutlet var settingsLabel: UILabel!
 
+    var totalText: String!
+    var settingsText: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        totalLabel.text = totalText
+        settingsLabel.text = settingsText
     }
     
     @IBAction func recalculateButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
