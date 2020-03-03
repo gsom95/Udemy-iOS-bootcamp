@@ -9,12 +9,19 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    @IBOutlet var billTextField: UITextField!
+    @IBOutlet var zeroPercentButton: UIButton!
+    @IBOutlet var tenPercentButton: UIButton!
+    @IBOutlet var twentyPercentButton: UIButton!
+    @IBOutlet var splitNumberLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction func tipChanged(_ sender: UIButton) {
     }
 
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+    }
 
+    @IBAction func calculateButtonPressed(_ sender: UIButton) {
+    }
 }
 
