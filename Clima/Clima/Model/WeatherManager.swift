@@ -8,7 +8,13 @@
 
 import Foundation
 
+protocol WeatherManagerDelegate {
+    func didUpdateWeather(_ weather: WeatherModel)
+}
+
 struct WeatherManager {
+    var delegate: WeatherViewController?
+
     let baseRequestURL = "https://api.openweathermap.org/data/2.5/weather?appid=0b82089e6d8a0e9a68234ce2dd49d901&q=%@&units=%@"
 
     func fetchWeather(forCity city: String, units: String = "metric") {
@@ -26,7 +32,9 @@ struct WeatherManager {
                 }
 
                 if let weatherData = data {
-                    self.parseJSON(fromData: weatherData)
+                    if let weatherModel = self.parseJSON(fromData: weatherData) {
+                        self.delegate?.didUpdateWeather(weatherModel)
+                    }
                 }
             }
 
@@ -34,37 +42,16 @@ struct WeatherManager {
         }
     }
 
-    func parseJSON(fromData data: Data) {
+    func parseJSON(fromData data: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: data)
-            let condition = getConditionName(fromID: decodedData.weather[0].id)
+
+            return WeatherModel(cityName: decodedData.name, conditionID: decodedData.weather[0].id, temperature: decodedData.main.temp)
         } catch {
             print("Error during data decoding: \(error)")
         }
-    }
 
-    func getConditionName(fromID id: Int) -> String {
-        var condition: String
-        switch id {
-            case 200...232:
-                condition = "cloud.bolt"
-            case 300..<321:
-                condition = "cloud.drizzle"
-            case 500..<531:
-                condition = "cloud.rain"
-            case 600..<622:
-                condition = "cloud.snow"
-            case 700..<781:
-                condition = "cloud.fog"
-            case 800:
-                condition = "sun.max"
-            case 801...804:
-                condition = "cloud"
-            default:
-                condition = "cloud"
-        }
-
-        return condition
+        return nil
     }
 }
