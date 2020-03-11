@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherViewController: UIViewController {
     @IBOutlet weak var conditionImageView: UIImageView!
@@ -15,12 +16,21 @@ class WeatherViewController: UIViewController {
     @IBOutlet var searchTextField: UITextField!
 
     var weatherManager = WeatherManager()
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+
         searchTextField.delegate = self
         weatherManager.delegate = self
+    }
+
+    @IBAction func getLocationButtonPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
     }
 }
 
@@ -49,6 +59,20 @@ extension WeatherViewController: UITextFieldDelegate {
         }
 
         searchTextField.text = ""
+    }
+}
+
+// MARK: - CLLocationManagerDelegate extension methods
+extension WeatherViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            weatherManager.fetchWeather(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        didFailWithError(error)
     }
 }
 
