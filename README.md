@@ -13,3 +13,4 @@ Projects developed during Udemy course ["The Complete iOS App Development Bootca
 9. [Destini](/Destini) Story like game with two options to move around the story.
 10. [BMI Calculator](/BMI-Calculator) A BMI calculator with two (2 !!!!) views.
 11. [Tipsy](/Tipsy) Spliting the bill (and considering tips). Also two views.
+12. [Clima](/Clima) Working with Codable and CoreLocation to get weather. 
