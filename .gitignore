@@ -4,6 +4,7 @@
 
 .DS_STORE
 .idea
+*.xcscheme
 
 ## Build generated
 build/
