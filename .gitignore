@@ -5,6 +5,7 @@
 .DS_STORE
 .idea
 *.xcscheme
+GoogleService-Info.plist
 
 ## Build generated
 build/
