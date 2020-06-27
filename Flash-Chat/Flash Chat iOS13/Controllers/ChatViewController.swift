@@ -16,8 +16,12 @@ class ChatViewController: UIViewController {
     
     var messages = [
         Message(sender: "1@2.com", body: "Hi!"),
-        Message(sender: "a@b.com", body: "Hello, epta!"),
-        Message(sender: "1@2.com", body: "What did you say?!"),
+        Message(sender: "a@b.com", body: "Hello, World!"),
+        Message(sender: "1@2.com", body: """
+Can you hear me, Major Tom?
+There is someone over the garden wall. We need to check.
+Proceed with caution. May the Force be with you, my dear friend.
+"""),
     ]
     
     override func viewDidLoad() {
@@ -27,6 +31,8 @@ class ChatViewController: UIViewController {
 
         title = Constants.appName
         navigationItem.hidesBackButton = true
+        
+        tableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
