@@ -22,8 +22,7 @@ class LoginViewController: UIViewController {
                     print(err.localizedDescription)
                     return
                 }
-                
-                self.performSegue(withIdentifier: "LoginToChat", sender: self)
+                self.performSegue(withIdentifier: Constants.loginSegue, sender: self)
             }
         }
         
