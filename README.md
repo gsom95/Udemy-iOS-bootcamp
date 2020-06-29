@@ -15,5 +15,5 @@ Projects developed during Udemy course ["The Complete iOS App Development Bootca
 11. [Tipsy](/Tipsy) Spliting the bill (and considering tips). Also two views.
 12. [Clima](/Clima) Working with URLSession, Codable and CoreLocation to get weather. 
 13. [ByteCoin](/ByteCoin) Getting Bitcoin price for different currencies with URLSession (and URLRequest to set header) and Decodable. To launch on simulator set env var API_KEY.
-14. [FlashChat](/FlashChat) Chat app based on Firebase (authentication and database for storing messages.).
+14. [FlashChat](/Flash-Chat) Chat app based on Firebase (authentication and database for storing messages.).
 15. [Dicee SwiftUI](/Dicee-SwiftUI) Just like [Dicee](/Dicee) but written with help of SwiftUI.
