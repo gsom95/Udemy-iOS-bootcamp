@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class ChatViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
     
@@ -22,7 +22,7 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
-
+        
         title = Constants.appName
         navigationItem.hidesBackButton = true
         
@@ -32,30 +32,33 @@ class ChatViewController: UIViewController {
     }
     
     func loadMessages() {
-        db.collection(Constants.FStore.collectionName).addSnapshotListener { (querySnapshot, error) in
-            self.messages = []
-            
-            if let err = error {
-                print("Cannot read messages: \(err.localizedDescription)")
-                return
-            }
-            
-            guard let documents = querySnapshot?.documents else {
-                print("No messages")
-                return
-            }
-            
-            for doc in documents {
-                let data = doc.data()
-                if let messageSender = data[Constants.FStore.senderField] as? String, let messageBody = data[Constants.FStore.bodyField] as? String {
-                    let msg = Message(sender: messageSender, body: messageBody)
-                    self.messages.append(msg)
+        db.collection(Constants.FStore.collectionName)
+            .order(by: Constants.FStore.dateField)
+            .addSnapshotListener { (querySnapshot, error) in
+                
+                self.messages = []
+                
+                if let err = error {
+                    print("Cannot read messages: \(err.localizedDescription)")
+                    return
                 }
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+                
+                guard let documents = querySnapshot?.documents else {
+                    print("No messages")
+                    return
+                }
+                
+                for doc in documents {
+                    let data = doc.data()
+                    if let messageSender = data[Constants.FStore.senderField] as? String, let messageBody = data[Constants.FStore.bodyField] as? String {
+                        let msg = Message(sender: messageSender, body: messageBody)
+                        self.messages.append(msg)
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
         }
     }
     
@@ -72,7 +75,8 @@ class ChatViewController: UIViewController {
         
         db.collection(Constants.FStore.collectionName).addDocument(data: [
             Constants.FStore.senderField: messageSender,
-            Constants.FStore.bodyField: messageBody
+            Constants.FStore.bodyField: messageBody,
+            Constants.FStore.dateField: Date().timeIntervalSince1970
         ]) { (error) in
             if let err = error {
                 print("Error adding the document: \(err.localizedDescription)")
