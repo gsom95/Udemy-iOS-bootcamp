@@ -63,7 +63,7 @@
 				783EA91D24AA30A100ABE93B /* Modules */,
 				783EA90524AA2AB900ABE93B /* AppDelegate.swift */,
 				783EA90724AA2AB900ABE93B /* SceneDelegate.swift */,
-				783EA90924AA2AB900ABE93B /* ContentView.swift */,
+				78D9238C24AA433E007F6B05 /* Views */,
 				783EA90B24AA2ABA00ABE93B /* Assets.xcassets */,
 				783EA91024AA2ABA00ABE93B /* LaunchScreen.storyboard */,
 				783EA91324AA2ABA00ABE93B /* Info.plist */,
@@ -87,6 +87,14 @@
 				783EA91B24AA2E1C00ABE93B /* PostData.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		78D9238C24AA433E007F6B05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				783EA90924AA2AB900ABE93B /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
