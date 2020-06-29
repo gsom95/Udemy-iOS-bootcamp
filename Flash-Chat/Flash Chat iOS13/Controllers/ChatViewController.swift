@@ -32,7 +32,9 @@ class ChatViewController: UIViewController {
     }
     
     func loadMessages() {
-        db.collection(Constants.FStore.collectionName).getDocuments { (querySnapshot, error) in
+        db.collection(Constants.FStore.collectionName).addSnapshotListener { (querySnapshot, error) in
+            self.messages = []
+            
             if let err = error {
                 print("Cannot read messages: \(err.localizedDescription)")
                 return
