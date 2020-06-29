@@ -84,6 +84,9 @@ class ChatViewController: UIViewController {
             }
             
             print("Document successfully added.")
+            DispatchQueue.main.async {
+                self.messageTextfield.text = ""
+            }
         }
     }
     
