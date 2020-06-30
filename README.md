@@ -17,3 +17,4 @@ Projects developed during Udemy course ["The Complete iOS App Development Bootca
 13. [ByteCoin](/ByteCoin) Getting Bitcoin price for different currencies with URLSession (and URLRequest to set header) and Decodable. To launch on simulator set env var API_KEY.
 14. [FlashChat](/Flash-Chat) Chat app based on Firebase (authentication and database for storing messages.).
 15. [Dicee SwiftUI](/Dicee-SwiftUI) Just like [Dicee](/Dicee) but written with help of SwiftUI.
+16. [HackerNews](/HackerNews) H4XOR NEWS FTW! Written in SwiftUI and a little bit of UIKit (WebKit to show pages).
